@@ -49,7 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="EF\WunderlistContext.cs" />
     <Compile Include="Entities\Comment.cs" />
     <Compile Include="Entities\Subscriber.cs" />
