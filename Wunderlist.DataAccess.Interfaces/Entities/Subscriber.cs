@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.Entities
+namespace Wunderlist.DataAccess.Interfaces.Entities
 {
     public class Subscriber
     {
