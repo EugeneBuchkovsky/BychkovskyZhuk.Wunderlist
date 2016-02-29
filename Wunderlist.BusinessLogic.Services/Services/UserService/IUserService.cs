@@ -10,7 +10,7 @@ namespace Wunderlist.BusinessLogic.Services.Services.UserService
     public interface IUserService
     {
         void Create(UserDTO user);
-        UserDTO Get(int id);
+        UserDTO Get(int? id);
         IEnumerable<UserDTO> GetAll(int id);
         void Update(UserDTO user);
         void Delete(int id);

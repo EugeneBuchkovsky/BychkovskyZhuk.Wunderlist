@@ -10,8 +10,8 @@ namespace Wunderlist.BusinessLogic.Services.Services.TaskListService
     public interface ITaskListService
     {
         void Create(TaskListDTO taskList);
-        TaskListDTO Get(int id);
-        IEnumerable<TaskListDTO> GetAll(int id);
+        TaskListDTO Get(int? id);
+        IEnumerable<TaskListDTO> GetAll(int? id);
         void Update(TaskListDTO taskList);
         void Delete(int id);
     }
