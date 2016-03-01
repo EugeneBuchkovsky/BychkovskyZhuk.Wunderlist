@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wunderlist.BusinessLogic.Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceToDataDependencyResolver", "ServiceToDataDependencyResolver\ServiceToDataDependencyResolver.csproj", "{3827B8E4-F39E-40C7-A1CC-80F7896CF7A3}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Wunderlist.UserInterface", "Wunderlist.UserInterface\Wunderlist.UserInterface.xproj", "{6FE0C6BB-568A-46B9-8485-82D4599D7AFC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{3827B8E4-F39E-40C7-A1CC-80F7896CF7A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3827B8E4-F39E-40C7-A1CC-80F7896CF7A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3827B8E4-F39E-40C7-A1CC-80F7896CF7A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FE0C6BB-568A-46B9-8485-82D4599D7AFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FE0C6BB-568A-46B9-8485-82D4599D7AFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FE0C6BB-568A-46B9-8485-82D4599D7AFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FE0C6BB-568A-46B9-8485-82D4599D7AFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
