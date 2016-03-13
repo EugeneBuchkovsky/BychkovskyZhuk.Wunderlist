@@ -22,9 +22,9 @@ namespace Wunderlist.DataAccess.Repositories
         private TaskFileRepository _taskFileRepository;
         private CommentRepository _commentRepository;
 
-        public UnitOfWork (WunderlistContext context)
+        public UnitOfWork (string connectionString)
         {
-            this.db = context;
+            this.db = new WunderlistContext(connectionString);
         }
 
         public IRepository<Comment> Comments
