@@ -46,5 +46,15 @@ namespace Wunderlist.WebUserInterface.Controllers
 
             return View();
         }
+
+        public ViewResult Register()
+        {
+            return View();
+        }
+
+        public ViewResult Login()
+        {
+            return View();
+        }
     }
 }
