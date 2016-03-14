@@ -9,6 +9,7 @@ namespace Wunderlist.WebUserInterface.App_Start
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 
     using ServiceToDataDependencyResolver;
+    using Wunderlist.WebUserInterface.DependencyResolver;
 
     using Ninject;
     using Ninject.Modules;
@@ -48,6 +49,9 @@ namespace Wunderlist.WebUserInterface.App_Start
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
+
+                var httpResolver = new WebAPIDependencyResolver(kernel);
+                System.Web.Http.GlobalConfiguration.Configuration.DependencyResolver = httpResolver;
 
                 RegisterServices(kernel);
                 return kernel;
