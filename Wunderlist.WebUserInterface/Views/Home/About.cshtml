@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "About";
+}
+
+@section scripts{
+        @*<script src="~/Angular/TaskListModule.js"></script>*@
+        @*<script src="~/Angular/UserModule.js"></script>*@
+        <script src="~/Angular/WunderlistModule.js"></script>
+        <script src="~/Angular/Controllers/TaskListController.js"></script>
+        <script src="~/Angular/Controllers/TodoItemController.js"></script>
+
+    }
+
+<h2>About</h2>
+
+<div ng-app="WunderlistApp">
+    <div ng-controller="TaskListController">
+        {{message}}
+        <table class="table">
+            <tr ng-repeat="l in lists">
+                <td>{{l.Id}}</td>
+                <td>{{l.Name}}</td>
+            </tr>
+        </table>
+    </div>
+    <div ng-controller="TodoItemController">
+        {{message}}
+        <table class="table">
+            <tr ng-repeat="i in items">
+                <td>{{i.Id}}</td>
+                <td>{{l.Record}}</td>
+                <td>{{l.IsComplited}}</td>
+                <td>{{l.CreationDate}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
