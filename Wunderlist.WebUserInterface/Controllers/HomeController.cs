@@ -21,8 +21,8 @@ namespace Wunderlist.WebUserInterface.Controllers
 
         public ActionResult Example()
         {
-            UserDTO nu = new UserDTO() {Id = 1, Name = "Eugene", Email = "bu@epam.com", Password = "1" };
-            userService.Create(nu);
+            //UserDTO nu = new UserDTO() {Name = "Zhuk", Email = "zhuk@epam.com", Password = "zhuk" };
+            //userService.Create(nu);
             Mapper.CreateMap<UserDTO, UserViewModel>();
             ViewBag.e = Mapper.Map<UserDTO, UserViewModel>(userService.Get(1));
             return View();

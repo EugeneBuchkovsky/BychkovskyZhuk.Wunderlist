@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using Ninject;
 using Wunderlist.BusinessLogic.Services.Services.UserService;
+using Wunderlist.BusinessLogic.Services.Services.TaskListService;
 using System.Web.Mvc;
 
 namespace Wunderlist.WebUserInterface.DependencyResolver
@@ -31,6 +32,7 @@ namespace Wunderlist.WebUserInterface.DependencyResolver
         private void AddBindings()
         {
             kernel.Bind<IUserService>().To<UserService>();
+            kernel.Bind<ITaskListService>().To<TaskListService>();
         }
     }
 }

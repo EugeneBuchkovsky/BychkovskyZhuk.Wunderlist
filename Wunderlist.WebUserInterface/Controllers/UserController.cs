@@ -4,11 +4,21 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Wunderlist.BusinessLogic.Services.Services.UserService;
+using Wunderlist.BusinessLogic.Services.DTO;
+using Wunderlist.WebUserInterface.Models;
+using AutoMapper;
+using Wunderlist.WebUserInterface.DependencyResolver;
 
 namespace Wunderlist.WebUserInterface.Controllers
 {
     public class UserController : ApiController
     {
+        private IUserService userService;
+        public UserController(IUserService us)
+        {
+            this.userService = us;
+        }
         // GET: api/User
         public IEnumerable<string> Get()
         {
@@ -16,9 +26,10 @@ namespace Wunderlist.WebUserInterface.Controllers
         }
 
         // GET: api/User/5
-        public string Get(int id)
+        public UserViewModel Get(int id)
         {
-            return "value";
+            Mapper.CreateMap<UserDTO, UserViewModel>();
+            return Mapper.Map<UserDTO, UserViewModel>(userService.Get(id));
         }
 
         // POST: api/User
