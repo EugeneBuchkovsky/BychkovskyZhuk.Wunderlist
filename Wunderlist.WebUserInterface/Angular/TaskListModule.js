@@ -1,6 +1,6 @@
-﻿//var UserApp = angular.module('UserApp', []);
+﻿var ListApp = angular.module('ListApp', []);
 
-UserApp.controller('TaskListController', function ($scope, TaskListService){
+ListApp.controller('TaskListController', function ($scope, TaskListService){
     //$scope.message = "Hello!";
 
     getList();
@@ -15,11 +15,11 @@ UserApp.controller('TaskListController', function ($scope, TaskListService){
     }
 });
 
-UserApp.factory('TaskListService', ['$http', function ($http) {
+ListApp.factory('TaskListService', ['$http', function ($http) {
 
     var TaskListService = {};
     TaskListService.getList = function () {
-        return $http.get('/api/TaskLists');
+        return $http({ method: 'GET', url: '/api/TaskLists', params: {'id':1} });
     }
     return TaskListService;
 }]);

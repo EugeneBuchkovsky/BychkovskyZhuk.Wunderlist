@@ -54,6 +54,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\TaskListService\ITaskListService.cs" />
     <Compile Include="Services\TaskListService\TaskListService.cs" />
+    <Compile Include="Services\TodoItemService\ITodoItemService.cs" />
+    <Compile Include="Services\TodoItemService\TodoItemService.cs" />
     <Compile Include="Services\UserService\IUserService.cs" />
     <Compile Include="Services\UserService\UserService.cs" />
   </ItemGroup>
@@ -62,7 +64,6 @@
     <Folder Include="Services\SubscriberService\" />
     <Folder Include="Services\SubtaskService\" />
     <Folder Include="Services\TaskFileService\" />
-    <Folder Include="Services\TodoItemService\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Wunderlist.DataAccess.Interfaces\Wunderlist.DataAccess.Interfaces.csproj">

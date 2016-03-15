@@ -5,6 +5,7 @@ using System.Web;
 using Ninject;
 using Wunderlist.BusinessLogic.Services.Services.UserService;
 using Wunderlist.BusinessLogic.Services.Services.TaskListService;
+using Wunderlist.BusinessLogic.Services.Services.TodoItemService;
 using System.Web.Mvc;
 
 namespace Wunderlist.WebUserInterface.DependencyResolver
@@ -33,6 +34,7 @@ namespace Wunderlist.WebUserInterface.DependencyResolver
         {
             kernel.Bind<IUserService>().To<UserService>();
             kernel.Bind<ITaskListService>().To<TaskListService>();
+            kernel.Bind<ITodoItemService>().To<TodoItemService>();
         }
     }
 }
