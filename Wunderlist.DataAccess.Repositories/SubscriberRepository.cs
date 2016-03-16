@@ -33,7 +33,12 @@ namespace Wunderlist.DataAccess.Repositories
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Subscriber> GetAll(int id) => db.Subscribers.Where(s => s.TaskListId == id);
+        public IEnumerable<Subscriber> GetAll() => db.Subscribers.ToList();
+
+        public IEnumerable<Subscriber> GetAll(int? id)
+        {
+            throw new NotImplementedException();
+        }
 
         public void Update(Subscriber item)
         {

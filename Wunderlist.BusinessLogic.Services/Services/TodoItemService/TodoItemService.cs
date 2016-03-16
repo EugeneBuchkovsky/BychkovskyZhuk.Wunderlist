@@ -50,7 +50,7 @@ namespace Wunderlist.BusinessLogic.Services.Services.TodoItemService
         {
             if (id == null)
                 throw new ArgumentNullException();
-            var items = Database.TodoItems.GetAll((int)id);
+            var items = Database.TodoItems.GetAll(id);
             Mapper.CreateMap<TodoItem, TodoItemDTO>();
             return Mapper.Map<IEnumerable<TodoItem>, List<TodoItemDTO>>(items);
         }

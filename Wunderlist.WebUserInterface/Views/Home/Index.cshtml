@@ -3,7 +3,11 @@
 }
 
 <h1>Index</h1>
-@Html.ActionLink("Register", "Register")
-@Html.ActionLink("Login", "Login")
+@Html.ActionLink("Register", "Register", "Account")
+@Html.ActionLink("Login", "Login", "Account")
+@if (Request.IsAuthenticated)
+{
+    <p>Зареган</p>
+}
 
 
