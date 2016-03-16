@@ -9,7 +9,8 @@
         <script src="~/Angular/WunderlistModule.js"></script>
         <script src="~/Angular/Controllers/TaskListController.js"></script>
         <script src="~/Angular/Controllers/TodoItemController.js"></script>
-
+        <script src="~/Scripts/angular-route.min.js"></script>
+        <a href="~/Angular/Views/TodoItems.html">~/Angular/Views/TodoItems.html</a>
     }
 
 <h2>About</h2>
@@ -20,19 +21,21 @@
         <table class="table">
             <tr ng-repeat="l in lists">
                 <td>{{l.Id}}</td>
-                <td>{{l.Name}}</td>
+                <td><a href="#/lists">{{l.Name}}</a></td>
             </tr>
         </table>
     </div>
+    <ng-view></ng-view>
     <div ng-controller="TodoItemController">
         {{message}}
         <table class="table">
             <tr ng-repeat="i in items">
                 <td>{{i.Id}}</td>
-                <td>{{l.Record}}</td>
-                <td>{{l.IsComplited}}</td>
-                <td>{{l.CreationDate}}</td>
+                <td>{{i.Record}}</td>
+                <td>{{i.IsComplited}}</td>
+                <td>{{i.CreationDate}}</td>
             </tr>
         </table>
     </div>
+    
 </div>

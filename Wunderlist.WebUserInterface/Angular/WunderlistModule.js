@@ -1,1 +1,11 @@
-﻿var WunderlistApp = angular.module('WunderlistApp', []);
+﻿/// <reference path="Views/TodoItems.html" />
+var WunderlistApp = angular.module('WunderlistApp', ["ngRoute"])
+.config(function ($routeProvider) {
+    //$routeProvider.when('/lists/:id',
+    $routeProvider.when('/lists',
+        {
+            templateUrl: 'TodoItems.html',
+            controller: 'TodoItemController'
+        });
+    //$routeProvider.otherwise({ redirectTo: '/lists/' });
+});
