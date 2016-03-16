@@ -30,7 +30,15 @@ namespace Wunderlist.DataAccess.Repositories
 
         public TodoItem Get(int id) => db.TodoItems.Find(id);
 
-        public IEnumerable<TodoItem> GetAll(int id) => db.TodoItems.Where(i => i.TaskListId == id);
+        public IEnumerable<TodoItem> GetAll() => db.TodoItems.ToList();
+
+        public IEnumerable<TodoItem> GetAll(int? id)
+        {
+            if (id == null)
+                throw new ArgumentNullException();
+
+            return db.TodoItems.Where(td => td.Id == id.Value).ToList();
+        }
 
         public void Update(TodoItem item)
         {

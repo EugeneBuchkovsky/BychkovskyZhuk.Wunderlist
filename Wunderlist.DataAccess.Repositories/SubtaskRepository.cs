@@ -30,7 +30,12 @@ namespace Wunderlist.DataAccess.Repositories
 
         public Subtask Get(int id) => db.Subtasks.Find(id);
 
-        public IEnumerable<Subtask> GetAll(int id) => db.Subtasks.Where(s => s.TodoItemId == id);
+        public IEnumerable<Subtask> GetAll() => db.Subtasks.ToList();
+
+        public IEnumerable<Subtask> GetAll(int? id)
+        {
+            throw new NotImplementedException();
+        }
 
         public void Update(Subtask item)
         {

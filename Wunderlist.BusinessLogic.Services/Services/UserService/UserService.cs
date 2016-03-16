@@ -39,16 +39,17 @@ namespace Wunderlist.BusinessLogic.Services.Services.UserService
         {
             if (id == null)
                 throw new ArgumentNullException();
-            var user = Database.Users.Get((int)id);
+            var user = Database.Users.Get(id.Value);
             if (user == null)
                 throw new ArgumentNullException();
             Mapper.CreateMap<User, UserDTO>();
             return Mapper.Map<User, UserDTO>(user);
         }
 
-        public IEnumerable<UserDTO> GetAll(int id)
+        public IEnumerable<UserDTO> GetAll()
         {
-            throw new NotImplementedException();
+            Mapper.CreateMap<User, UserDTO>();
+            return Mapper.Map<IEnumerable<User>, List<UserDTO>>(Database.Users.GetAll());
         }
 
         public void Update(UserDTO user)
@@ -56,6 +57,18 @@ namespace Wunderlist.BusinessLogic.Services.Services.UserService
             Mapper.CreateMap<UserDTO, User>();
             Database.Users.Update(Mapper.Map<UserDTO, User>(user));
             Database.Save();
+        }
+
+        public UserDTO GetByEmail(string email)
+        {
+            if (email == null)
+                throw new ArgumentNullException();
+
+            var user = Database.Users.GetAll().FirstOrDefault(u => u.Email == email);
+            if (user == null)
+                throw new ArgumentNullException("No user with such email");
+            Mapper.CreateMap<User, UserDTO>();
+            return Mapper.Map<User, UserDTO>(user);
         }
     }
 }

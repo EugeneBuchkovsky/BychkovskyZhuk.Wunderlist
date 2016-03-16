@@ -33,7 +33,12 @@ namespace Wunderlist.DataAccess.Repositories
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Comment> GetAll(int id) => db.Comments.Where(c => c.TodoItemId == id);
+        public IEnumerable<Comment> GetAll() => db.Comments.ToList();
+
+        public IEnumerable<Comment> GetAll(int? id)
+        {
+            throw new NotImplementedException();
+        }
 
         public void Update(Comment item)
         {

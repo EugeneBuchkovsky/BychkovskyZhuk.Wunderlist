@@ -30,7 +30,12 @@ namespace Wunderlist.DataAccess.Repositories
 
         public User Get(int id) => db.Users.Find(id);
 
-        public IEnumerable<User> GetAll(int id) => db.Users.Where(u => u.Id == id);
+        public IEnumerable<User> GetAll() => db.Users.ToList();
+
+        public IEnumerable<User> GetAll(int? id)
+        {
+            throw new NotImplementedException();
+        }
 
         public void Update(User item)
         {

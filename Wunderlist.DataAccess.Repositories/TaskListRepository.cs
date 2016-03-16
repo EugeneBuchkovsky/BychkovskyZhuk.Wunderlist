@@ -30,7 +30,12 @@ namespace Wunderlist.DataAccess.Repositories
 
         public TaskList Get(int id) => db.TaskLists.Find(id);
 
-        public IEnumerable<TaskList> GetAll(int id) => db.TaskLists.Where(t => t.UserId == id);
+        public IEnumerable<TaskList> GetAll() => db.TaskLists.ToList();
+
+        public IEnumerable<TaskList> GetAll(int? id)
+        {
+            throw new NotImplementedException();
+        }
 
         public void Update(TaskList item)
         {

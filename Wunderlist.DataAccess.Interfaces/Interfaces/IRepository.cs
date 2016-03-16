@@ -8,7 +8,7 @@ namespace Wunderlist.DataAccess.Interfaces.Interfaces
 {
     public interface IRepository<T> where T : class
     {
-        IEnumerable<T> GetAll(int id);
+        IEnumerable<T> GetAll();
 
         T Get(int id);
 
@@ -17,5 +17,7 @@ namespace Wunderlist.DataAccess.Interfaces.Interfaces
         void Update(T item);
 
         void Delete(int id);
+
+        IEnumerable<T> GetAll(int? id);
     }
 }

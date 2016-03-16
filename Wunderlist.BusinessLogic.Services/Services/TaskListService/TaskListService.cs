@@ -50,7 +50,7 @@ namespace Wunderlist.BusinessLogic.Services.Services.TaskListService
         {
             if (id == null)
                 throw new ArgumentNullException();
-            var list = Database.TaskLists.GetAll((int)id);
+            var list = Database.TaskLists.GetAll(id);
             Mapper.CreateMap<TaskList, TaskListDTO>();
             return Mapper.Map<IEnumerable<TaskList>,List<TaskListDTO>>(list);
         }
