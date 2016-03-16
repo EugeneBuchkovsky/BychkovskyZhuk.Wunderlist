@@ -37,7 +37,7 @@ namespace Wunderlist.DataAccess.Repositories
             if (id == null)
                 throw new ArgumentNullException();
 
-            return db.TodoItems.Where(td => td.Id == id.Value).ToList();
+            return db.TodoItems.Where(td => td.TaskListId == id);
         }
 
         public void Update(TodoItem item)

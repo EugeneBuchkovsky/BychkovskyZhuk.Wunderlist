@@ -26,7 +26,9 @@ namespace Wunderlist.WebUserInterface.Controllers
         public IEnumerable<TodoItemViewModel> Get()
         {
             Mapper.CreateMap<TodoItemDTO, TodoItemViewModel>();
-            return Mapper.Map<IEnumerable<TodoItemDTO>, List<TodoItemViewModel>>(itemService.GetAll(1));
+            var result = Mapper.Map<IEnumerable<TodoItemDTO>, List<TodoItemViewModel>>(itemService.GetAll(1));
+            //return Mapper.Map<IEnumerable<TodoItemDTO>, List<TodoItemViewModel>>(itemService.GetAll(1));
+            return result;
         }
         
 

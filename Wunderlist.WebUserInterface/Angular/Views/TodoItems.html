@@ -1,10 +1,16 @@
-﻿    <h3>Items</h3>
+﻿    
+<div>
+    <h3>Items</h3>
     <div>
-        <div ng-repeat="i in items>
-            <ul>
-                <li>{{i.Record}}</li>
-                <li>{{i.IsCompleted}}</li>
-                <li>{{i.IsMarked}}</li>
-            </ul>
+        <div>
+            <table class="table">
+                <tr ng-repeat="i in items">
+                    <td>{{i.Id}}</td>
+                    <td>{{i.Record}}</td>
+                    <td>{{i.IsComplited}}</td>
+                    <td>{{i.CreationDate}}</td>
+                </tr>
+            </table>
         </div>
     </div>
+</div>

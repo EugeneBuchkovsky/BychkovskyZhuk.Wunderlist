@@ -65,8 +65,8 @@ namespace Wunderlist.BusinessLogic.Services.Services.UserService
                 throw new ArgumentNullException();
 
             var user = Database.Users.GetAll().FirstOrDefault(u => u.Email == email);
-            if (user == null)
-                throw new ArgumentNullException("No user with such email");
+            //if (user == null)
+            //    throw new ArgumentNullException("No user with such email");
             Mapper.CreateMap<User, UserDTO>();
             return Mapper.Map<User, UserDTO>(user);
         }

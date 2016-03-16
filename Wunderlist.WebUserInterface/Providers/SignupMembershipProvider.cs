@@ -10,16 +10,19 @@ namespace Wunderlist.WebUserInterface.Providers
 {
     public class SignupMembershipProvider : MembershipProvider
     {
-        private readonly IUserService _userService;
+        //private readonly IUserService _userService;
 
-        public SignupMembershipProvider(IUserService service)
+        public IUserService UserService
         {
-            this._userService = service;
+            get
+            {
+                return (IUserService)System.Web.Mvc.DependencyResolver.Current.GetService(typeof(UserService));
+            }
         }
 
         public override bool ValidateUser(string email, string password)
         {
-            var user = _userService.GetByEmail(email);
+            var user = UserService.GetByEmail(email);
             if (user != null && Crypto.VerifyHashedPassword(user.Password, password))
                 return true;
 
@@ -28,9 +31,9 @@ namespace Wunderlist.WebUserInterface.Providers
 
         public override MembershipUser GetUser(string email, bool userIsOnline)
         {
-            var user = _userService.GetByEmail(email);
+            var user = UserService.GetByEmail(email);
             if (user == null)
-                throw new ArgumentNullException();
+                return null;
 
             var membershipUser = new MembershipUser("SignupMembershipProvider", user.Email, null, null, null, null, 
                 false, false, DateTime.MinValue, DateTime.MinValue, DateTime.MinValue, DateTime.MinValue, DateTime.MinValue);
@@ -44,7 +47,7 @@ namespace Wunderlist.WebUserInterface.Providers
             if (membershipUser != null)
                 throw new ArgumentException();
 
-            _userService.Create(new BusinessLogic.Services.DTO.UserDTO()
+            UserService.Create(new BusinessLogic.Services.DTO.UserDTO()
             {
                 Email = email,
                 Password = Crypto.HashPassword(password),

@@ -34,7 +34,9 @@ namespace Wunderlist.DataAccess.Repositories
 
         public IEnumerable<TaskList> GetAll(int? id)
         {
-            throw new NotImplementedException();
+            if (id == null)
+                throw new ArgumentNullException();
+           return db.TaskLists.Where(t => t.UserId == id);
         }
 
         public void Update(TaskList item)
